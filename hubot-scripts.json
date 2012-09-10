@@ -10,4 +10,5 @@
  ,"hashing.coffee"
  ,"isup.coffee"
  ,"redmine.coffee"
+ ,"travis.coffee"
 ]
