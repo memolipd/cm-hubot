@@ -1,1 +1,1 @@
-app: bin/hubot -a hipchat -n hu
+app: bin/hubot -a hipchat -n '@hu'
