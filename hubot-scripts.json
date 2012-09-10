@@ -11,4 +11,5 @@
  ,"isup.coffee"
  ,"redmine.coffee"
  ,"travis.coffee"
+ ,"uptime-robot.coffee"
 ]
