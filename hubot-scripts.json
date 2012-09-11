@@ -1,5 +1,6 @@
 [
-  "botsnack.coffee"
+  "ambush.coffee"
+ ,"botsnack.coffee"
  ,"carlton.coffee"
  ,"commitmessage.coffee"
  ,"complete.coffee"
@@ -14,7 +15,6 @@
  ,"redis-brain.coffee"
  ,"remind.coffee"
  ,"shipit.coffee"
- ,"tell.coffee"
  ,"travis.coffee"
  ,"tweet.coffee"
  ,"uptime-robot.coffee"
