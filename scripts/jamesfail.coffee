@@ -3,5 +3,5 @@
 #
 
 module.exports = (robot) ->
-  robot.hear /^ exit$/i, (msg) ->
+  robot.hear /^exit$/i, (msg) ->
     msg.send "#bigredbuttonfail (facepalm)"
