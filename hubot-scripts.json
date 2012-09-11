@@ -15,6 +15,7 @@
  ,"redis-brain.coffee"
  ,"remind.coffee"
  ,"shipit.coffee"
+ ,"storage-delete.cofeee"
  ,"travis.coffee"
  ,"tweet.coffee"
  ,"uptime-robot.coffee"
