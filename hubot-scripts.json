@@ -9,8 +9,6 @@
  ,"karma.coffee"
  ,"redis-brain.coffee"
  ,"remind.coffee"
- ,"shipit.coffee"
- ,"storage-delete.cofeee"
  ,"uptime-robot.coffee"
  ,"url.coffee"
  ,"wordnik.coffee"
