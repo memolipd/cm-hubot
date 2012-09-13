@@ -16,17 +16,6 @@ module.exports = (robot) ->
     imageMe msg, msg.match[2], true, (url) ->
       msg.send url
 
-  robot.respond /(?:mo?u)?sta(?:s|c)he?(?: me)? (.*)/i, (msg) ->
-    type = Math.floor(Math.random() * 3)
-    mustachify = "http://mustachify.me/#{type}?src="
-    imagery = msg.match[1]
-
-    if imagery.match /^https?:\/\//i
-      msg.send "#{mustachify}#{imagery}"
-    else
-      imageMe msg, imagery, (url) ->
-        msg.send "#{mustachify}#{url}"
-
 imageMe = (msg, query, animated, cb) ->
   cb = animated if typeof animated == 'function'
   q = v: '1.0', rsz: '8', q: query, safe: 'active'
@@ -39,4 +28,3 @@ imageMe = (msg, query, animated, cb) ->
       if images.length > 0
         image  = msg.random images
         cb "#{image.unescapedUrl}#.png"
-
