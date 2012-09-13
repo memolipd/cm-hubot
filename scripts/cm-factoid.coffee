@@ -10,7 +10,7 @@ module.exports = (robot) ->
 
   robot.brain.data.cm_factoids ||= {}
 
-  robot.respond /@?([\w -_]+) is (\<reply\>)?(.+)$/i, (msg) ->
+  robot.respond /@?([\w -_]+?) is (\<reply\>)?(.+)$/i, (msg) ->
 
     # Pop the matches into some useful variables.
     name = msg.match[1].trim()
