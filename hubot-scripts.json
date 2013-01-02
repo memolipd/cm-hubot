@@ -7,7 +7,7 @@
  ,"hashing.coffee"
  ,"isup.coffee"
  ,"karma.coffee"
- ,"redis-brain.coffee"
+ ,"file-brain.coffee"
  ,"remind.coffee"
  ,"uptime-robot.coffee"
  ,"url.coffee"
