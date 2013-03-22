@@ -3,7 +3,7 @@
 #
 
 module.exports = (robot) ->
-  robot.hear /^BUT$/, (msg) ->
+  robot.hear /^but$/i, (msg) ->
     msg.send msg.random [
        "https://s3.amazonaws.com/ksr/projects/376855/photo-main.jpg?1352945926#.png"
       ,"https://si0.twimg.com/profile_images/2323541493/jnyln8ngz70b7skdj5ih.png#.png"
