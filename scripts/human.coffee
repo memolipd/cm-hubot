@@ -4,18 +4,10 @@
 
 module.exports = (robot) ->
   robot.hear /^BUT$/, (msg) ->
-    imageMe msg, 'BUT', (url) ->
-      msg.send url
-
-imageMe = (msg, query, animated, cb) ->
-  cb = animated if typeof animated == 'function'
-  q = v: '1.0', rsz: '8', q: query, safe: 'active'
-  q.as_filetype = 'gif' if typeof animated is 'boolean' and animated is true
-  msg.http('http://ajax.googleapis.com/ajax/services/search/images')
-    .query(q)
-    .get() (err, res, body) ->
-    images = JSON.parse(body)
-    images = images.responseData.results
-    if images.length > 0
-      image  = msg.random images
-      cb "#{image.unescapedUrl}#.png"
+    msg.send msg.random [
+       "https://s3.amazonaws.com/ksr/projects/376855/photo-main.jpg?1352945926#.png"
+      ,"https://si0.twimg.com/profile_images/2323541493/jnyln8ngz70b7skdj5ih.png#.png"
+      ,"http://www.jobekia.com/data/logos/443/carre_but.jpg#.png"
+      ,"http://www.blessedisthekingdom.com/wp-content/uploads/2013/02/but.jpg#.png",
+      ,"http://www.theuniversalsolvent.net/wp-content/uploads/2011/05/Logo-BUT1.png#.png"
+    ]
