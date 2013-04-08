@@ -1,5 +1,5 @@
 # Description:
-#   Hu will complete important song lyrics.
+#   Hu will be a little more human, and witty
 #
 
 module.exports = (robot) ->
