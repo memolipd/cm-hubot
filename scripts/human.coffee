@@ -17,9 +17,3 @@ module.exports = (robot) ->
       "http://mctoastface.files.wordpress.com/2010/01/brb.jpg#.png"
       "http://2.bp.blogspot.com/-9P1mj8KsjYQ/Te3AWMFR3AI/AAAAAAAAAdw/tgvw3Xws4_I/s400/brb1.jpg#.png"
     ]
-  robot.hear /^nein$/, (msg) ->
-    msg.send msg.random [
-      "http://www.saulustig.com/e107_files/public/1331118802_2823_FT42270_nein.jpg"
-      "http://lsbtmst.files.wordpress.com/2012/09/20120915-075636.jpg"
-      "http://static.autoblog.nl/images/wp2013/Hitler-neinneinnein-01.jpg"
-    ]
