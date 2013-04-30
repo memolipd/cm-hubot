@@ -16,6 +16,8 @@
 
 class Karma
 
+  constructor: (@robot) ->
+
   sort: ->
     s = []
     for key, val of @robot.brain.data.karma
