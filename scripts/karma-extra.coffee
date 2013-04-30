@@ -38,7 +38,7 @@ module.exports = (robot) ->
   karma = new Karma robot
 
   robot.respond /karma (best|top) (\d+)$/i, (msg) ->
-    verbiage = ["The Best" + msg.match[1]]
+    verbiage = ["The Best " + msg.match[1]]
     for item, rank in karma.top(msg.match[1])
       verbiage.push "#{rank + 1}. #{item.name} - #{item.karma}"
     msg.send verbiage.join("\n")
