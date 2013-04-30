@@ -38,13 +38,13 @@ module.exports = (robot) ->
   karma = new Karma robot
 
   robot.respond /karma (best|top) (\d+)$/i, (msg) ->
-    verbiage = ["The Best " + msg.match[1]]
-    for item, rank in karma.top(msg.match[1])
+    verbiage = ["The Best " + msg.match[2]]
+    for item, rank in karma.top(msg.match[2])
       verbiage.push "#{rank + 1}. #{item.name} - #{item.karma}"
     msg.send verbiage.join("\n")
 
   robot.respond /karma (worst|bottom) (\d+)$/i, (msg) ->
-    verbiage = ["The Worst " + msg.match[1]]
-    for item, rank in karma.bottom(msg.match[1])
+    verbiage = ["The Worst " + msg.match[2]]
+    for item, rank in karma.bottom(msg.match[2])
       verbiage.push "#{rank + 1}. #{item.name} - #{item.karma}"
     msg.send verbiage.join("\n")
