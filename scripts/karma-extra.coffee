@@ -9,7 +9,9 @@
 #
 # Commands:
 #   hubot karma best N - show the top N
+#   hubot karma top N - show the top N
 #   hubot karma worst N - show the bottom N
+#   hubot karma bottom N - show the bottom N
 #
 # Author:
 #   Steven Jones
@@ -35,14 +37,14 @@ class Karma
 module.exports = (robot) ->
   karma = new Karma robot
 
-  robot.respond /karma best (\d+)$/i, (msg) ->
-    verbiage = ["The Best", msg.match[1]]
+  robot.respond /karma (best|top) (\d+)$/i, (msg) ->
+    verbiage = ["The Best" + msg.match[1]]
     for item, rank in karma.top(msg.match[1])
       verbiage.push "#{rank + 1}. #{item.name} - #{item.karma}"
     msg.send verbiage.join("\n")
 
-  robot.respond /karma worst (\d+)$/i, (msg) ->
-    verbiage = ["The Worst", msg.match[1]]
+  robot.respond /karma (worst|bottom) (\d+)$/i, (msg) ->
+    verbiage = ["The Worst " + msg.match[1]]
     for item, rank in karma.bottom(msg.match[1])
       verbiage.push "#{rank + 1}. #{item.name} - #{item.karma}"
     msg.send verbiage.join("\n")
