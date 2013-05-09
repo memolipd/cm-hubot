@@ -93,9 +93,9 @@ module.exports = (robot) ->
     reminders.add reminder
     msg.send 'I\'ll remind you to ' + action + ' on ' + reminder.dueDate()
 
-  robot.respond /remind me (at|on) (.*) (to|that) (.*)/i, (msg) ->
+  robot.respond /remind me (at|on) (((?!(to|that)).)*) (to|that) (.*)/i, (msg) ->
     time = msg.match[2]
-    action = msg.match[4]
+    action = msg.match[6]
     # Compute the actual time using magic.
     parsedDate = Date.create time
     if parsedDate.isValid() and parsedDate.isFuture()
