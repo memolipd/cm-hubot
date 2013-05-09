@@ -9,6 +9,7 @@
 #
 # Commands:
 #   hubot remind me in <time> to <action> - Set a reminder in <time> to do an <action> <time> is in the format 1 day, 2 hours, 5 minutes etc. Time segments are optional, as are commas
+#   hubot remind me (at|on) <date-format> (to|that) <action> - Set a reminder in <date-format> to do an <action> <date-format> is in one of the parseable formats here: http://sugarjs.com/dates
 #
 # Author:
 #   whitman
