@@ -101,7 +101,6 @@ module.exports = (robot) ->
     if parsedDate.isValid() and parsedDate.isFuture()
       # We got a valid date, so let's pass it on in the format that we normally expect
       strTime = (parsedDate.secondsFromNow() + 1) + ' seconds'
-      msg.send parsedDate.secondsFromNow()
       reminder = new Reminder msg.message.user, strTime, action
       reminders.add reminder
       msg.send 'I\'ll remind you to ' + action + ' on ' + reminder.dueDate()
