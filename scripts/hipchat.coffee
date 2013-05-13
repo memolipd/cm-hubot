@@ -3,5 +3,5 @@
 #
 
 module.exports = (robot) ->
-  robot.hear /(@\w+) .*\n.*$/i, (msg) ->
+  robot.hear /(@\w+) (.*\n+.*)+$/i, (msg) ->
     msg.send msg.match[1] + " see above"
