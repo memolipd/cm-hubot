@@ -3,5 +3,10 @@
 #
 
 module.exports = (robot) ->
-  robot.hear /(@\w+) (.*\n+.*)+$/i, (msg) ->
-    msg.send msg.match[1] + " see above"
+  # Listen for lines that have line breaks in them
+  robot.hear /\n/i, (msg) ->
+    # Now find all the mentions in that message.
+    matches = msg.match[0].match /@\w+/g
+    for match in matches
+      do (handle) ->
+        msg.send handle + " see above"
