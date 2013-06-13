@@ -13,4 +13,7 @@ module.exports = (robot) ->
     ]
 
   robot.hear /^no no no$/i, (msg) ->
-    msg.send "(music) Don't funk with my heart (music)"
+    msg.send msg.random [
+      "(music) Don't funk with my heart (music)"
+      "(music) You don't love me, this I know now"
+    ]
