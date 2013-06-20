@@ -101,7 +101,7 @@ class Karma
 
   # Get the Karma per whitelisted object
   karmaPerObject: ->
-    return process.env.KARMA_PER_OBJECT or 10
+    return process.env.KARMA_PER_OBJECT or 20
 
   # Compute the total global Karma available
   computeKarmaAvailable: ->
