@@ -6,8 +6,6 @@
 #   hubot timestamp 1234567890 - Format the given UNIX timestamp as a UTC date string.
 #   hubot day of the year - Return the current day of the year
 
-sugar = require('sugar')
-
 module.exports = (robot) ->
   robot.respond /timestamp( \d+)?/i, (msg) ->
     if msg.match[1]?
