@@ -101,7 +101,7 @@ class Karma
 
   # Get the Karma per whitelisted object
   karmaPerObject: ->
-    return process.env.KARMA_PER_OBJECT or 20
+    return process.env.KARMA_PER_OBJECT or 13
 
   # Compute the total global Karma available
   computeKarmaAvailable: ->
@@ -166,10 +166,10 @@ module.exports = (robot) ->
       verbiage.push "#{rank + 1}. #{item.name} - #{item.karma}"
     msg.send verbiage.join("\n")
 
-  robot.respond /karma doomsday countdown$/i, (msg) ->
-    available = karma.computeKarmaAvailable()
-    allocated = karma.computeKarmaAllocated()
-    msg.send "Currently there is #{allocated} karma out of a possible #{available} assigned."
+#  robot.respond /karma doomsday countdown$/i, (msg) ->
+#    available = karma.computeKarmaAvailable()
+#    allocated = karma.computeKarmaAllocated()
+#    msg.send "Currently there is #{allocated} karma out of a possible #{available} assigned."
 
   robot.respond /karma doomsday involve (\S+[^-\s])$/i, (msg) ->
     match = msg.match[1].toLowerCase()
