@@ -1,3 +1,7 @@
 module.exports = (robot) ->
-  robot.respond /bristoloffice? (.*)/i, (msg) ->
-      msg.send "hello"
+
+        robot.hear /coventry/i, msg ->
+                msg.send msg.replace /@coventry/i, "@SJ, @ST, @JW, @JF, @JS - "
+                
+        robot.hear /@bristol/i, msg ->
+          msg.send msg.replace /@bristol/i,  "@MD, @CD, @GG, @IP, @RB, @AF, @CS, @SM - "
