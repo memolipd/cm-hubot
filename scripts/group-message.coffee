@@ -1,3 +1,3 @@
 module.exports = (robot) ->
-  robot.respond /bristol/i, (msg) ->
+  robot.respond /bristoloffice? (.*)/i, (msg) ->
       msg.send "hello"
