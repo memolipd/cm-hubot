@@ -7,7 +7,7 @@
 
 module.exports = (robot) ->
         
-  robot.hear /@bristol/i, (msg) ->
+  robot.hear /bristol/i, (msg) ->
     msg.send msg.message.text.replace /@bristol/gi,  "@MD, @CD, @GG, @IP, @RB, @AF, @CS, @SM"
   
   robot.hear /@cov(entry)?/i, (msg) ->
