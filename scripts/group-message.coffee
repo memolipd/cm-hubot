@@ -1,7 +1,15 @@
-module.exports = (robot) ->
+# Description:
+#   Allows Hutbot to do 'group' notifications
+#
+# Commands:
+#   hubot @bristol something or other
+#   hubot @cov(entry) something or other
 
-        robot.respond /coventry/i, msg ->
-                msg.send msg.replace /@coventry/i, "@SJ, @ST, @JW, @JF, @JS - "
-                
-        robot.respond /@bristol/i, msg ->
-          msg.send msg.replace /@bristol/i,  "@MD, @CD, @GG, @IP, @RB, @AF, @CS, @SM - "
+module.exports = (robot) ->
+        
+  robot.hear /@bristol/i, (msg) ->
+    msg.send msg.message.text.replace /@bristol/ig,  "@MD, @CD, @GG, @IP, @RB, @AF, @CS, @SM"
+  
+  robot.hear /@cov(entry)?/i, (msg) ->
+    msg.send msg.message.text.replace /@cov(entry)?/gi, "@SJ, @ST, @JW, @JF, @JS"
+
