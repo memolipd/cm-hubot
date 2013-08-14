@@ -86,6 +86,7 @@ class Karma
     allocated = @computeKarmaAllocated()
     if available != 0 and allocated >= available
       msg.send "The day of the great karma reset is upon us!"
+      msg.seng "https://s3-eu-west-1.amazonaws.com/uploads-eu.hipchat.com/20915/161731/c9p06ovwdydu21i/cmjd.gif"
       verbiage = ["Final karma for this time around was:"]
       s = []
       for key, v of @karma_whitelist
