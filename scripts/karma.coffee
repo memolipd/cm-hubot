@@ -141,6 +141,16 @@ module.exports = (robot) ->
     subject = msg.match[1].toLowerCase()
     karma.decrement subject
     msg.send "#{subject} #{karma.decrementResponse()} (Karma: #{karma.get(subject)})"
+    msg.send msg.random [
+        "http://www.maximumpc.com/files/u69/Funny_cat.jpg",
+        "http://f.kulfoto.com/pic/0001/0042/X405J41847.jpg",
+        "http://i.qkme.me/3oe9zq.jpg",
+        "http://www.whydidyouwearthat.com/wp-content/uploads/2009/01/karma.jpg",
+        "http://i384.photobucket.com/albums/oo287/Wozny_01/karma.jpg",
+        "http://www.tickld.com/images/gif/d37bca28c0fe1667a02cd3535e3182d2.gif",
+        "http://memeguy.com/photos/images/after-getting-negative-karma-on-my-cakeday-17121.png",
+        "https://s3-eu-west-1.amazonaws.com/uploads-eu.hipchat.com/20915/161731/lssv1igme1hwg6c/minusminus.gif"
+      ]
 
   robot.respond /karma empty ?(\S+[^-\s])$/i, (msg) ->
     subject = msg.match[1].toLowerCase()
