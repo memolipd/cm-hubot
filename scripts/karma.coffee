@@ -88,7 +88,8 @@ class Karma
       msg.send "The day of the great karma reset is upon us!"
       msg.send msg.random [
         "https://s3-eu-west-1.amazonaws.com/uploads-eu.hipchat.com/20915/161731/c9p06ovwdydu21i/cmjd.gif",
-        "https://s3-eu-west-1.amazonaws.com/uploads-eu.hipchat.com/20915/161731/yawnva1xgm6cx7w/cmjd2.gif"
+        "https://s3-eu-west-1.amazonaws.com/uploads-eu.hipchat.com/20915/161731/yawnva1xgm6cx7w/cmjd2.gif",
+        "https://s3-eu-west-1.amazonaws.com/uploads-eu.hipchat.com/20915/161731/lssv1igme1hwg6c/minusminus.gif"
       ]
       verbiage = ["Final karma for this time around was:"]
       s = []
