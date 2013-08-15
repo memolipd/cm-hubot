@@ -136,7 +136,8 @@ module.exports = (robot) ->
     karma.increment subject
     msg.send "#{subject} #{karma.incrementResponse()} (Karma: #{karma.get(subject)})"
     karma.potentialReset msg
-    msg.send msg.random [
+    if Math.random() < 0.1
+      msg.send msg.random [
         "http://www.tickld.com/images/gif/62dc3ed9acfb1ffed49180c100acc204.gif",
         "http://smerity.com/media/images/articles/2013/reddit_karma.gif",
         "https://s3-eu-west-1.amazonaws.com/uploads-eu.hipchat.com/20915/332427/exggy7yoa4mxca9/plusplus.gif"
@@ -146,7 +147,8 @@ module.exports = (robot) ->
     subject = msg.match[1].toLowerCase()
     karma.decrement subject
     msg.send "#{subject} #{karma.decrementResponse()} (Karma: #{karma.get(subject)})"
-    msg.send msg.random [
+    if Math.random() < 0.2
+      msg.send msg.random [
         "http://i.qkme.me/3oe9zq.jpg",
         "http://www.whydidyouwearthat.com/wp-content/uploads/2009/01/karma.jpg",
         "https://s3-eu-west-1.amazonaws.com/uploads-eu.hipchat.com/20915/161731/lssv1igme1hwg6c/minusminus.gif"
@@ -209,5 +211,4 @@ module.exports = (robot) ->
     match = msg.match[1].toLowerCase()
     if match != "best" && match != "worst"
       msg.send "\"#{match}\" has #{karma.get(match)} karma."
-
 
