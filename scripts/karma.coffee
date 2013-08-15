@@ -142,6 +142,8 @@ module.exports = (robot) ->
     karma.decrement subject
     msg.send "#{subject} #{karma.decrementResponse()} (Karma: #{karma.get(subject)})"
     msg.send msg.random [
+        "http://i.qkme.me/3oe9zq.jpg",
+        "http://www.whydidyouwearthat.com/wp-content/uploads/2009/01/karma.jpg",
         "https://s3-eu-west-1.amazonaws.com/uploads-eu.hipchat.com/20915/161731/lssv1igme1hwg6c/minusminus.gif"
       ]
 
