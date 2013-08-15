@@ -136,6 +136,11 @@ module.exports = (robot) ->
     karma.increment subject
     msg.send "#{subject} #{karma.incrementResponse()} (Karma: #{karma.get(subject)})"
     karma.potentialReset msg
+    msg.send msg.random [
+        "http://www.tickld.com/images/gif/62dc3ed9acfb1ffed49180c100acc204.gif",
+        "http://smerity.com/media/images/articles/2013/reddit_karma.gif",
+        "https://s3-eu-west-1.amazonaws.com/uploads-eu.hipchat.com/20915/332427/exggy7yoa4mxca9/plusplus.gif"
+      ]
 
   robot.hear /(\S+[^-\s])--(\s|$)/, (msg) ->
     subject = msg.match[1].toLowerCase()
