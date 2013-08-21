@@ -87,9 +87,9 @@ class Karma
     if available != 0 and allocated >= available
       msg.send "The day of the great karma reset is upon us!"
       msg.send msg.random [
-        "https://s3-eu-west-1.amazonaws.com/uploads-eu.hipchat.com/20915/161731/c9p06ovwdydu21i/cmjd.gif",
-        "https://s3-eu-west-1.amazonaws.com/uploads-eu.hipchat.com/20915/161731/yawnva1xgm6cx7w/cmjd2.gif",
-        "https://s3-eu-west-1.amazonaws.com/uploads-eu.hipchat.com/20915/161731/lssv1igme1hwg6c/minusminus.gif"
+        "https://dl.dropboxusercontent.com/u/5359452/hubot/cmjd.gif",
+        "https://dl.dropboxusercontent.com/u/5359452/hubot/cmjd2.gif",
+        "https://dl.dropboxusercontent.com/u/5359452/hubot/minusminus.gif"
       ]
       verbiage = ["Final karma for this time around was:"]
       s = []
@@ -138,9 +138,9 @@ module.exports = (robot) ->
     karma.potentialReset msg
     if Math.random() < 0.1
       msg.send msg.random [
-        "http://www.tickld.com/images/gif/62dc3ed9acfb1ffed49180c100acc204.gif",
-        "http://smerity.com/media/images/articles/2013/reddit_karma.gif",
-        "https://s3-eu-west-1.amazonaws.com/uploads-eu.hipchat.com/20915/332427/exggy7yoa4mxca9/plusplus.gif"
+        "https://dl.dropboxusercontent.com/u/5359452/hubot/high-five.gif",
+        "https://dl.dropboxusercontent.com/u/5359452/hubot/reddit_karma.gif",
+        "https://dl.dropboxusercontent.com/u/5359452/hubot/plusplus.gif"
       ]
 
   robot.hear /(\S+[^-\s])--(\s|$)/, (msg) ->
@@ -149,9 +149,9 @@ module.exports = (robot) ->
     msg.send "#{subject} #{karma.decrementResponse()} (Karma: #{karma.get(subject)})"
     if Math.random() < 0.2
       msg.send msg.random [
-        "http://i.qkme.me/3oe9zq.jpg",
-        "http://www.whydidyouwearthat.com/wp-content/uploads/2009/01/karma.jpg",
-        "https://s3-eu-west-1.amazonaws.com/uploads-eu.hipchat.com/20915/161731/lssv1igme1hwg6c/minusminus.gif"
+        "https://dl.dropboxusercontent.com/u/5359452/hubot/karma_train.jpg",
+        "https://dl.dropboxusercontent.com/u/5359452/hubot/karma.jpg",
+        "https://dl.dropboxusercontent.com/u/5359452/hubot/minusminus.gif"
       ]
 
   robot.respond /karma empty ?(\S+[^-\s])$/i, (msg) ->
