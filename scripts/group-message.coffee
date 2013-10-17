@@ -10,5 +10,5 @@ module.exports = (robot) ->
     msg.send msg.message.text.replace /@bristol/gi,  "@MD, @CD, @GG, @IP, @RB, @AF, @CS, @SM"
   
   robot.hear /@cov(entry)?/i, (msg) ->
-    msg.send msg.message.text.replace /@cov(entry)?/gi, "@SJ, @ST, @JW, @JF, @JS"
+    msg.send msg.message.text.replace /@cov(entry)?/gi, "@SJ, @ST, @JW, @JF, @JS, @GJG"
 
