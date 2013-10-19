@@ -43,7 +43,7 @@ module.exports = (robot) ->
       msg.send robot.brain.data.cm_factoids[name]
 
   robot.respond /factoids\s*(.*)?$/i, (msg) ->
-    factoids = Object.keys(robot.brain.data.cm_factoids).sort
+    factoids = Object.keys(robot.brain.data.cm_factoids).sort()
     filter = msg.match[1]
 
     if filter
