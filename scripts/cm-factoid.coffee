@@ -5,6 +5,8 @@
 #   hubot '<thing>' is <factoid> - Remember a factoid about a thing.
 #   <thing>? - Show an associated factoid for the thing.
 #   hubot forget '<thing>' - Forget any factoid stored for the thing.
+#   hubot factoids - Displays all factoids.
+#   hubot factoids <query> - Displays all factoids that match <query>.
 
 module.exports = (robot) ->
 
@@ -39,3 +41,16 @@ module.exports = (robot) ->
     # Let's see if we have a matching factoid for this.
     if robot.brain.data.cm_factoids[name]?
       msg.send robot.brain.data.cm_factoids[name]
+
+  robot.respond /factoids\s*(.*)?$/i, (msg) ->
+    factoids = Object.keys(robot.brain.data.cm_factoids)
+    filter = msg.match[1]
+
+    if filter
+      factoids = factoids.filter (fact) ->
+        fact.match new RegExp(filter, 'i')
+      if factoids.length == 0
+        msg.send "No factoids match #{filter}"
+        return
+
+    msg.send factoids.join "\n"
