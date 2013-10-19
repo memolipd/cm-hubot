@@ -14,6 +14,8 @@
 #   hubot karma empty <thing> - empty a thing's karma
 #   hubot karma best - show the top 5
 #   hubot karma worst - show the bottom 5
+#   hubot karma list - list all the known karma entries
+#   hubot karma list <query> - list all the known karma entries matching <query>
 #   hubot karma doomsday countdown - Show how far off doomsday we are
 #   hubot karma doomsday involve <thing> - Involve <thing> in the Doomsday reset
 #   hubot karma doomsday reprieve <thing> - Remove <thing> from the Doomsday reset
@@ -71,6 +73,12 @@ class Karma
     for key, val of @cache
       s.push({ name: key, karma: val })
     s.sort (a, b) -> b.karma - a.karma
+
+  sortAlpha: ->
+    s = []
+    for key, val of @cache
+      s.push({ name: key, karma: val })
+    s.sort (a, b) -> a.name.localeCompare b.name
 
   top: (n = 5) ->
     sorted = @sort()
@@ -181,6 +189,22 @@ module.exports = (robot) ->
     verbiage = ["The Worst " + msg.match[2]]
     for item, rank in karma.bottom(msg.match[2])
       verbiage.push "#{rank + 1}. #{item.name} - #{item.karma}"
+    msg.send verbiage.join("\n")
+
+  robot.respond /karma list\s*(.*)?$/i, (msg) ->
+    karmas = karma.sortAlpha()
+    filter = msg.match[1]
+
+    if filter
+      karmas = karmas.filter (fact) ->
+        fact.name.match new RegExp(filter, 'i')
+      if karmas.length == 0
+        msg.send "No karmas match #{filter}"
+        return
+
+    verbiage = []
+    for item, rank in karmas
+      verbiage.push "#{item.name} - #{item.karma}"
     msg.send verbiage.join("\n")
 
 #  robot.respond /karma doomsday countdown$/i, (msg) ->
