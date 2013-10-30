@@ -65,6 +65,7 @@ module.exports = (robot) ->
     else if robot.brain.data.cm_factoids_aliases[name]?
       aliased_name = robot.brain.data.cm_factoids_aliases[name]
       if robot.brain.data.cm_factoids[aliased_name]?
+        msg.send "#{name} is aliased to #{aliased_name}, let me look that up..."
         msg.send robot.brain.data.cm_factoids[aliased_name]
 
 
