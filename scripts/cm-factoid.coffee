@@ -12,7 +12,7 @@ module.exports = (robot) ->
 
   robot.brain.data.cm_factoids ||= {}
 
-  robot.respond /@?(['"])([^\1]+?)\1 is (\<reply\>)?(.+)$/i, (msg) ->
+  robot.respond /@?(['"])([^\1]+?)\1 is (\<reply\>)?([\s\S]+)$/i, (msg) ->
 
     # Pop the matches into some useful variables.
     name = msg.match[2].trim()
